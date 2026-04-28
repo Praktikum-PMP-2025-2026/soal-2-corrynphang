@@ -2,12 +2,12 @@
  *   Modul               : 03 – Structures and Dynamic Arrays
  *   Hari dan Tanggal    : Selasa, 28 April 2026
  *   Nama (NIM)          : Beatrice Corryn Pangestu (13224038)
- *   Nama File           : soal1.c
- *   Deskripsi           : Sebuah kubah pengaman dijaga oleh petugas dalam tiga shift berbeda: pagi, siang, dan malam. Setiap 
-penjaga memiliki identitas dan skor respons yang menunjukkan performanya saat bertugas. Kepala 
-keamanan ingin mengetahui siapa penjaga terbaik pada tiap shift agar jadwal evaluasi dapat segera 
-disusun. Jika suatu shift tidak memiliki penjaga terdaftar, sistem tetap harus menandai kondisi itu 
-dengan jelas. 
+ *   Nama File           : soal2.c
+ *   Deskripsi           : Gudang perlengkapan penelitian memiliki banyak nama barang yang tersimpan dalam katalog digital. 
+Saat operator mengetik awalan nama suatu barang, sistem pencarian harus segera memberikan 
+beberapa saran paling relevan agar proses input menjadi lebih cepat. Anda diminta membuat 
+mekanisme sederhana yang dapat menampilkan maksimal tiga nama barang pertama yang cocok 
+dengan awalan yang diberikan. 
  * 
  */
 #include <stdio.h>
