@@ -28,17 +28,17 @@ int main(){
     char prefix[256];
     char **arr= NULL;
     int sum=0;
+    char temp[256];
     scanf("%d ",&N);
     char *out[3];
     arr = (char**)malloc(N * sizeof(char*));
       for (int i = 0; i < N; i++) {
         arr[i] = inputStringDinamis();
     }
-    scanf("%s",prefix);
-    char temp[strlen(prefix)];
+    scanf("%s",&prefix);
     for (int i=0; i <N;N++){
         strcpy(temp, arr[i]);
-        if (strcmp(prefix,temp)==0){
+        if (strncmp(prefix,temp,strlen(prefix)) ==0){
             out[i]=arr[i];
         }
     }
