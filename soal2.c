@@ -14,7 +14,7 @@ dengan awalan yang diberikan.
 #include <stdlib.h>
 #include <string.h>
 char* inputStringDinamis() {
-    char buffer[1024]; 
+    char buffer[256]; 
     if (fgets(buffer, sizeof(buffer), stdin) == NULL) return NULL;
     buffer[strcspn(buffer, "\n")] = '\0';
     char *str = (char*)malloc((strlen(buffer) + 1) * sizeof(char));
@@ -42,7 +42,7 @@ int main(){
             out[i]=arr[i];
         }
     }
-    
+
     printf("SUGGESTION ");
     for (int i=0; i<3; i++){
         printf("%s",out[i]);
