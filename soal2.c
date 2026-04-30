@@ -14,13 +14,13 @@ dengan awalan yang diberikan.
 #include <stdlib.h>
 #include <string.h>
 
-int compareStrings(const void *a, const void *b) {
+int compare(const void *a, const void *b) {
     return strcmp(*(const char **)a, *(const char **)b);
 }
-char* inputStringDinamis() {
+
+char* input() {
     char buffer[256]; 
     if (scanf("%s", buffer) != 1) return NULL; 
-    
     char *str = (char*)malloc((strlen(buffer) + 1) * sizeof(char));
     if (str != NULL) {
         strcpy(str, buffer);
@@ -28,31 +28,30 @@ char* inputStringDinamis() {
     return str;
 }
 
-int main(){
+int main() {
     int N;
     char prefix[256];
-
     if (scanf("%d", &N) != 1) return 0;
-
     char **arr = (char**)malloc(N * sizeof(char*));
     if (arr == NULL) return 1;
-
     for (int i = 0; i < N; i++) {
-        arr[i] = inputStringDinamis();
+        arr[i] = input();
     }
     scanf("%s", prefix);
-    qsort(arr, N, sizeof(char*), compareStrings);
+    qsort(arr, N, sizeof(char*), compare);
 
     char *out[3];
-    int sum = 0;
+    int sum = 0; 
     int prefix_len = strlen(prefix);
     for (int i = 0; i < N; i++) {
         if (strncmp(prefix, arr[i], prefix_len) == 0) {
-            out[sum] = arr[i];
-            sum++;
-            if (sum == 3) break;
+            out[sum] = arr[i]; 
+            sum++;            
+            if (sum == 3) {
+                break;         
+            }
         }
-    
+    }
     if (sum == 0) {
         printf("TIDAK ADA\n");
     } else {
@@ -62,12 +61,10 @@ int main(){
         }
         printf("\n");
     }
-
     for (int i = 0; i < N; i++) {
         free(arr[i]);
     }
     free(arr);
 
     return 0;
-}
 }
